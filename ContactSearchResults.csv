@@ -1,0 +1,12 @@
+Contact ID,Channel,Initiation timestamp,System phone number,Queue,Agent,Customer phone number,Disconnect timestamp,Contact duration,Initiation method
+e1695afa-4b10-4ce9-a186-da1c86cb719a,Voice,2022-05-24 15:00:08,+000,VoteEditorQueue,agent,+000,2022-05-24 15:00:31,00:00:23,Inbound
+e8c418b1-1cd2-4afe-aa06-09fdab46f338,Voice,2022-05-24 14:58:26,+000,VoteEditorQueue,agent,+000,2022-05-24 14:59:01,00:00:35,Inbound
+3f633aee-72f7-4c7c-b14e-a0096fa8e528,Voice,2022-05-23 23:31:00,+000,VoteEditorQueue,agent,+000,2022-05-23 23:31:50,00:00:50,Inbound
+05c0541d-a9e1-4355-a781-84169ae247b1,Voice,2022-05-23 23:28:40,+000,VoteEditorQueue,agent,+000,2022-05-23 23:30:02,00:01:22,Inbound
+b3effd08-902c-4d61-b1de-1ec29b772372,Voice,2022-05-23 23:26:40,+000,VoteEditorQueue,agent,+000,2022-05-23 23:27:00,00:00:20,Inbound
+9f76428a-4995-4860-8276-4c98c36e001a,Voice,2022-05-23 23:23:26,+000,VoteEditorQueue,agent,+000,2022-05-23 23:23:48,00:00:22,Inbound
+afa98c30-503a-4db8-b04e-4bdae5dfd661,Voice,2022-05-23 23:22:02,+000,VoteEditorQueue,agent,+000,2022-05-23 23:22:17,00:00:15,Inbound
+6c3f8a97-733d-4355-bbd4-6dad974e3350,Voice,2022-05-23 23:19:30,+000,VoteEditorQueue,agent,+000,2022-05-23 23:19:59,00:00:29,Inbound
+0fffa552-e3d0-49e6-9d8b-eefaac950c7f,Voice,2022-05-23 23:17:14,+000,VoteEditorQueue,agent,+000,2022-05-23 23:17:28,00:00:14,Inbound
+9625dc87-e644-4bf3-a39f-b0ddf6ced4af,Voice,2022-05-23 23:15:09,+000,VoteEditorQueue,agent,+000,2022-05-23 23:15:44,00:00:35,Inbound
+6a5afc6a-5248-46dd-aa64-f3d091543305,Voice,2022-05-23 21:20:53,+000,VoteEditorQueue,agent,+000,2022-05-23 21:21:57,00:01:04,Inbound
