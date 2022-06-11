@@ -45,8 +45,6 @@ For each record, it checks whether the Contact duration is less than 60s and add
 2. It also assumes that the Contact duration is located in the 8th column of the csv file. Open the file ```utils.js``` and modify accordingly. When counting the index, start from 0.
 3. If you get a response with 0sec and you know you shouldnt, check the Contact duration index(see 2)
 
-### WTFPL Licence
-
 
 
 
