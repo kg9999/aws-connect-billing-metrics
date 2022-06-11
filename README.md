@@ -1,5 +1,4 @@
-# aws-connect-billing-metrics
-# DISCLAIMER: aws-connect-billing-metrics is not affiliated with Amazon or any of it's subsidiaries. Use at your own risk.
+# DISCLAIMER: aws-connect-billing-metrics is NOT affiliated with Amazon or any of it's subsidiaries. Use at your own risk.
 
 From [Amazon Connect pricing Docs](https://www.google.com/aclk?sa=L&ai=DChcSEwiQhprt66X4AhUQ7u0KHT9wC24YABABGgJkZw&sig=AOD64_0gFq9YFh6JK-cTnJakkdLXMPYzuA&ved=2ahUKEwi_jZTt66X4AhVPi1wKHZFmBWYQqyQoAHoECAIQBQ&adurl=)
 
@@ -11,7 +10,7 @@ But since Amazon Connect charges a minimum of 60s, the actual value(minutes) wil
 Therefore, this program tries to calculate the difference in minutes(Metrics vs Billing).
 
 
-#### For example dddd
+#### For example
 
 Suppose I receive the following inbound calls to my contact center:
 
@@ -24,4 +23,30 @@ The metrics will contain the following minutes: 40s + 50s + 26s = 116s
 But since Amazon Connect charges minimum(60s), the billing dashboard show the following minutes: 60s + 60s + 60s = 180s
 
 Given the CTRs, this program tries to calculate the difference(180 - 116 = 64sec)
+
+### How it works
+
+Given the CTRs in csv format, this program loops through the records.
+For each record, it checks whether the Contact duration is less than 60s and adds the difference to the total.
+
+### How to run
+1. Download the project
+2. cd into project home ```cd aws-connect-billing-metrics ```
+3. ```npm install```
+4. ``` npm start``` or ```node index.js```
+5. Navigate to your contact search
+6. search by date and add ```Initiation method``` field to your contact table
+7. Download the csv file
+8. Replace ```ContactSearchResults.csv``` with the downloaded file
+
+
+### Note
+1. This program assumes that the filename is ```ContactSearchResults.csv``` and located in the project root. 
+2. It also assumes that the Contact duration is located in the 8th column of the csv file. Open the file ```utils.js``` and modify accordingly. When counting the index, start from 0.
+3. If you get a response with 0sec and you know you shouldnt, check the Contact duration index(see 2)
+
+### WTFPL Licence
+
+
+
 
