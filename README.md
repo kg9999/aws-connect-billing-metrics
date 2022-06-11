@@ -34,7 +34,7 @@ For each record, it checks whether the Contact duration is less than 60s and add
 2. cd into project home ```cd aws-connect-billing-metrics ```
 3. ```npm install```
 4. ``` npm start``` or ```node index.js```
-5. You should get the following output: { inboundSecondsNotInMetrics: 297, inboundMinutesNotInMetrics: '4:57', code: 'Success', message: 'No error occured while processing the file contents' }
+5. You should get the following output: ```{ inboundSecondsNotInMetrics: 297, inboundMinutesNotInMetrics: '4:57', code: 'Success', message: 'No error occured while processing the file contents' }```
 6. Navigate to your contact search
 7. search by date and add ```Initiation method``` field to your contact table
 8. Download the csv file
