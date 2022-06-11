@@ -4,11 +4,11 @@ const csv = require('csv');
 const input = {
     fileName: 'ContactSearchResults.csv',
     contactDurationIndex: 8, // index of contact duration column
-    minimumAmazonConnectSec: 60
+    minimumAmazonConnectSec: 60 // Connect charges a minimum of 60 sec
 };
 const response = {
-    inboundSecondsNotInMetrics: 0,
-    inboundMinutesNotInMetrics: 0,
+    inboundSecondsNotInMetrics: 0, // total in sec
+    inboundMinutesNotInMetrics: 0, // total in min
     code: 'Success', // Success/Error
     message: 'No error occured while processing the file contents'
 }
@@ -23,7 +23,7 @@ function processRecord(ctr) {
     }
 }
 
-function durationToSeconds(duration = 60) {
+function durationToSeconds(duration = '00:00:00') {
  const splitDuration = duration.split(':'); //HH:MM:SS
  return (+splitDuration[0]) * 60 * 60 + (+splitDuration[1]) * 60 + (+splitDuration[2]);
 }
@@ -34,10 +34,9 @@ const calculateMissingDuration = () => {
             console.error(err);
             response.code = 'Error';
             response.message = `An error occured while processing file contents. Results might be corrupted: ${err.message}`;
-        }).on('data', (row) => {
-            processRecord(row);
+        }).on('data', (ctrRecord) => {
+            processRecord(ctrRecord);
         }).on('end', function () {
-            const sec = response.inboundSecondsNotInMetrics;
             response.inboundMinutesNotInMetrics = Math.floor(response.inboundSecondsNotInMetrics / 60) + ":" + (response.inboundSecondsNotInMetrics % 60 ? response.inboundSecondsNotInMetrics % 60 : '00')
             return resolve(response);
         });
