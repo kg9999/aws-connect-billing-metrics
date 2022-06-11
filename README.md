@@ -35,15 +35,15 @@ For each record, it checks whether the Contact duration is less than 60s and add
 3. ```npm install```
 4. ``` npm start``` or ```node index.js```
 5. You should get the following output: ```{ inboundSecondsNotInMetrics: 297, inboundMinutesNotInMetrics: '4:57', code: 'Success', message: 'No error occured while processing the file contents' }```
-6. Navigate to your contact search
-7. search by date and add ```Initiation method``` field to your contact table
+6. Navigate to your [Contact Search](https://docs.aws.amazon.com/connect/latest/adminguide/contact-search.html)
+7. filter by date and add ```Initiation method``` field to your contact table
 8. Download the csv file
 9. Replace ```ContactSearchResults.csv``` with the downloaded file
 
 
 ### Note
 1. This program assumes that the filename is ```ContactSearchResults.csv``` and located in the project root. 
-2. It also assumes that the Contact duration is located in the 8th column of the csv file. Open the file ```utils.js``` and modify accordingly. When counting the index, start from 0.
+2. It also assumes that the Contact duration is located in the 8th and Initiation Method in the 9th column of the csv file. Open the file ```utils.js``` and modify accordingly. When counting the index, start from 0.
 3. If you get a response with 0sec and you know you shouldnt, check the Contact duration index(see 2)
 
 
