@@ -4,6 +4,8 @@ const csv = require('csv');
 const input = {
     fileName: 'ContactSearchResults.csv',
     contactDurationIndex: 8, // index of contact duration column
+    contactinitiationMethodIndex: 9, // contact initiation method
+    contactinitiationMethod: 'Inbound',
     minimumAmazonConnectSec: 60 // Connect charges a minimum of 60 sec
 };
 const response = {
@@ -16,10 +18,13 @@ const response = {
 const parser = csv.parse({ delimiter: ',', from_line: 2 /* ignore csv header */ });
 
 function processRecord(ctr) {
-    const ctrSeconds = durationToSeconds(ctr[input.contactDurationIndex]);
-    // Add duration not in metrics as Connect billing charges a minimum of 60seconds
-    if (ctrSeconds < input.minimumAmazonConnectSec) {
-        response.inboundSecondsNotInMetrics += (input.minimumAmazonConnectSec - ctrSeconds);
+    //Modify and filter as you wish i.e outbound. 
+    if (ctr[input.contactinitiationMethodIndex] === input.contactinitiationMethod) {
+        const ctrSeconds = durationToSeconds(ctr[input.contactDurationIndex]);
+        // Add duration not in metrics as Connect billing charges a minimum of 60seconds
+        if (ctrSeconds < input.minimumAmazonConnectSec) {
+            response.inboundSecondsNotInMetrics += (input.minimumAmazonConnectSec - ctrSeconds);
+        }
     }
 }
 
