@@ -44,7 +44,7 @@ For each record, it checks whether the Contact duration is less than 60s and add
 ### Note
 1. This program assumes that the filename is ```ContactSearchResults.csv``` and located in the project root. 
 2. It also assumes that the Contact duration is located in the 8th and Initiation Method in the 9th column of the csv file. Open the file ```utils.js``` and modify accordingly. When counting the index, start from 0.
-3. If you get a response with 0sec and you know you shouldnt, check the Contact duration index(see 2)
+3. If you get a response with 0sec and you know you shouldnt, check the Contact duration and initiation method index(see 2)
 
 
 
